@@ -1,0 +1,32 @@
+# Arquivos de ambiente virtual
+venv/
+.env
+*.venv
+
+# Arquivos compilados
+__pycache__/
+*.py[cod]
+
+# Logs e depurações
+*.log
+logs/
+
+# Dependências instaladas (geralmente são reinstaladas via requirements.txt)
+*.egg-info/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Configurações específicas do sistema
+.DS_Store
+Thumbs.db
+
+# Arquivos de IDEs e editores
+.vscode/
+.idea/
+*.iml
+
+# Arquivos do Jupyter Notebook
+.ipynb_checkpoints/
+
+# Arquivos do sistema operacional
+*.swp

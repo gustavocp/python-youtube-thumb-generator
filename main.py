@@ -34,7 +34,7 @@ WIDTH, HEIGHT = 1280, 720
 # ---------------------
 try:
     # Convert para RGBA para podermos aplicar transparência
-    bg = Image.open(config["background_image"]).convert("RGBA")
+    bg = Image.open("assets/background/"+config["background_image"]).convert("RGBA")
     # Redimensiona para o tamanho definido (1280x720)
     bg = bg.resize((WIDTH, HEIGHT))
 except Exception as e:
@@ -113,7 +113,7 @@ logo_size = (80, 80)  # Tamanho das logos
 
 for logo_path in config["logos"]:
     try:
-        logo = Image.open(logo_path).convert("RGBA")
+        logo = Image.open("assets/logos/"+logo_path).convert("RGBA")
         logo = logo.resize(logo_size)
         bg.paste(logo, (logo_x, logos_y), logo)
         logo_x += logo_size[0] + 20  # Espaçamento horizontal
@@ -137,5 +137,6 @@ draw.text((author_x, author_y), author_text, font=font_author, fill="white")
 # ---------------------
 # SALVAR IMAGEM
 # ---------------------
-bg.save(config["output"])
-print(f"Thumbnail gerada em: {config['output']}")
+outputPath = "output/"+config["output"]
+bg.save(outputPath+config["output"])
+print(f"Thumbnail gerada em: {outputPath}")
